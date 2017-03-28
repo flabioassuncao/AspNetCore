@@ -1,0 +1,9 @@
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Domain\bin\Debug\netstandard1.6\Eventos.IO.Domain.deps.json
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Domain\bin\Debug\netstandard1.6\Eventos.IO.Domain.dll
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Domain\bin\Debug\netstandard1.6\Eventos.IO.Domain.pdb
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Domain\bin\Debug\netstandard1.6\Eventos.IO.Domain.Core.dll
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Domain\bin\Debug\netstandard1.6\Eventos.IO.Domain.Core.pdb
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Domain\obj\Debug\netstandard1.6\Eventos.IO.Domain.csprojResolveAssemblyReference.cache
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Domain\obj\Debug\netstandard1.6\Eventos.IO.Domain.AssemblyInfo.cs
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Domain\obj\Debug\netstandard1.6\Eventos.IO.Domain.dll
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Domain\obj\Debug\netstandard1.6\Eventos.IO.Domain.pdb

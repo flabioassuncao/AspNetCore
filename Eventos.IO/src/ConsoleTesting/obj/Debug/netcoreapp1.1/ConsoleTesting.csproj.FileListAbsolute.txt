@@ -1,0 +1,5 @@
+C:\projetos\AspNetCore\Eventos.IO\src\ConsoleTesting\bin\Debug\netcoreapp1.1\ConsoleTesting.deps.json
+C:\projetos\AspNetCore\Eventos.IO\src\ConsoleTesting\bin\Debug\netcoreapp1.1\ConsoleTesting.runtimeconfig.json
+C:\projetos\AspNetCore\Eventos.IO\src\ConsoleTesting\bin\Debug\netcoreapp1.1\ConsoleTesting.runtimeconfig.dev.json
+C:\projetos\AspNetCore\Eventos.IO\src\ConsoleTesting\obj\Debug\netcoreapp1.1\ConsoleTesting.csprojResolveAssemblyReference.cache
+C:\projetos\AspNetCore\Eventos.IO\src\ConsoleTesting\obj\Debug\netcoreapp1.1\ConsoleTesting.AssemblyInfo.cs

@@ -1,0 +1,17 @@
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Site\bin\Debug\netcoreapp1.1\appsettings.json
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Site\bin\Debug\netcoreapp1.1\Eventos.IO.Site.deps.json
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Site\bin\Debug\netcoreapp1.1\Eventos.IO.Site.runtimeconfig.json
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Site\bin\Debug\netcoreapp1.1\Eventos.IO.Site.runtimeconfig.dev.json
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Site\bin\Debug\netcoreapp1.1\Eventos.IO.Site.dll
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Site\bin\Debug\netcoreapp1.1\Eventos.IO.Site.pdb
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Site\bin\Debug\netcoreapp1.1\Eventos.IO.Domain.Core.dll
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Site\bin\Debug\netcoreapp1.1\Eventos.IO.Domain.dll
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Site\bin\Debug\netcoreapp1.1\Eventos.IO.Infra.Data.dll
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Site\bin\Debug\netcoreapp1.1\Eventos.IO.Infra.Data.pdb
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Site\bin\Debug\netcoreapp1.1\Eventos.IO.Domain.pdb
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Site\bin\Debug\netcoreapp1.1\Eventos.IO.Domain.Core.pdb
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Site\obj\Debug\netcoreapp1.1\Eventos.IO.Site.csprojResolveAssemblyReference.cache
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Site\obj\Debug\netcoreapp1.1\UserSecretsAssemblyInfo.cs
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Site\obj\Debug\netcoreapp1.1\Eventos.IO.Site.AssemblyInfo.cs
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Site\obj\Debug\netcoreapp1.1\Eventos.IO.Site.dll
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Site\obj\Debug\netcoreapp1.1\Eventos.IO.Site.pdb
