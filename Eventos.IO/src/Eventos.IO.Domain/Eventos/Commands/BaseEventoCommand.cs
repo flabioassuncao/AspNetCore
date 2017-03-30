@@ -18,7 +18,6 @@ namespace Eventos.IO.Domain.Eventos.Commands
         public bool Online { get; protected set; }
         public string NomeEmpresa { get; protected set; }
         public Guid OrganizadorId { get; protected set; }
-        public Endereco Endereco { get; protected set; }
-        public Categoria Categoria { get; protected set; }
+        public Guid CategoriaId { get; protected set; }
     }
 }

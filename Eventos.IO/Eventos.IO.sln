@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos.IO.Infra.Data", "sr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos.IO.Site", "src\Eventos.IO.Site\Eventos.IO.Site.csproj", "{E4A63014-0B68-479F-AD27-9F8A9F7C44B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos.IO.Application", "src\Eventos.IO.Application\Eventos.IO.Application.csproj", "{C1500A83-A4AA-4333-B790-009ED6D7B3A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{E4A63014-0B68-479F-AD27-9F8A9F7C44B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4A63014-0B68-479F-AD27-9F8A9F7C44B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4A63014-0B68-479F-AD27-9F8A9F7C44B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1500A83-A4AA-4333-B790-009ED6D7B3A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1500A83-A4AA-4333-B790-009ED6D7B3A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1500A83-A4AA-4333-B790-009ED6D7B3A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1500A83-A4AA-4333-B790-009ED6D7B3A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,5 +64,6 @@ Global
 		{C98E6540-4701-4DFA-8869-B4D6FDA554D2} = {FDB06399-FDB3-42E2-A29F-863F4EE19FA4}
 		{DACAF63D-5A96-47F8-9915-5DD9050918DB} = {4BD33FD0-D192-45CE-A79E-C6699985523D}
 		{E4A63014-0B68-479F-AD27-9F8A9F7C44B4} = {475CA529-332E-4D15-B12F-C97D60BA4B23}
+		{C1500A83-A4AA-4333-B790-009ED6D7B3A2} = {E8A5D460-6492-408A-87DD-ABDBC0C18427}
 	EndGlobalSection
 EndGlobal
