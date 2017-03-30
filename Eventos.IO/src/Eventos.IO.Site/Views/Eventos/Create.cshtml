@@ -1,0 +1,114 @@
+@using Eventos.IO.Application.ViewModels
+@model EventoViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>EventoViewModel</h4>
+        <hr />
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="Nome" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DescricaoCurta" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="DescricaoCurta" class="form-control" />
+                <span asp-validation-for="DescricaoCurta" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DescricaoLonga" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <textarea rows="4" asp-for="DescricaoLonga" class="form-control"> </textarea>
+                <span asp-validation-for="DescricaoLonga" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Categoria" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                @Html.Partial("_Categorias");
+                <span asp-validation-for="Categoria" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DataInicio" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="DataInicio" class="form-control" />
+                <span asp-validation-for="DataInicio" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DataFim" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="DataFim" class="form-control" />
+                <span asp-validation-for="DataFim" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="Gratuito" />
+                    <label asp-for="Gratuito"></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Valor" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Valor" class="form-control" />
+                <span asp-validation-for="Valor" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="Online" />
+                    <label asp-for="Online"></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="NomeEmpresa" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="NomeEmpresa" class="form-control" />
+                <span asp-validation-for="NomeEmpresa" class="text-danger"></span>
+            </div>
+        </div>
+
+        
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

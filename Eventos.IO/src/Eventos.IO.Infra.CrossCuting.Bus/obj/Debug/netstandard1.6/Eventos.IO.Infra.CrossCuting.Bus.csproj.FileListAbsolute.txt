@@ -1,0 +1,9 @@
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Infra.CrossCuting.Bus\bin\Debug\netstandard1.6\Eventos.IO.Infra.CrossCuting.Bus.deps.json
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Infra.CrossCuting.Bus\bin\Debug\netstandard1.6\Eventos.IO.Infra.CrossCuting.Bus.dll
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Infra.CrossCuting.Bus\bin\Debug\netstandard1.6\Eventos.IO.Infra.CrossCuting.Bus.pdb
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Infra.CrossCuting.Bus\bin\Debug\netstandard1.6\Eventos.IO.Domain.Core.dll
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Infra.CrossCuting.Bus\bin\Debug\netstandard1.6\Eventos.IO.Domain.Core.pdb
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Infra.CrossCuting.Bus\obj\Debug\netstandard1.6\Eventos.IO.Infra.CrossCuting.Bus.csprojResolveAssemblyReference.cache
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Infra.CrossCuting.Bus\obj\Debug\netstandard1.6\Eventos.IO.Infra.CrossCuting.Bus.AssemblyInfo.cs
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Infra.CrossCuting.Bus\obj\Debug\netstandard1.6\Eventos.IO.Infra.CrossCuting.Bus.dll
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Infra.CrossCuting.Bus\obj\Debug\netstandard1.6\Eventos.IO.Infra.CrossCuting.Bus.pdb

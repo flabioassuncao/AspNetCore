@@ -28,6 +28,7 @@ namespace Eventos.IO.Application.ViewModels
         public string CEP { get;  set; }
         public string Cidade { get;  set; }
         public string Estado { get;  set; }
+        public Guid EventoId { get; set; }
 
         public override string ToString()
         {

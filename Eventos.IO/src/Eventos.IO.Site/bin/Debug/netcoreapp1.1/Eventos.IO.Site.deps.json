@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "152b1870def24accac5095069826b14195e11640"
+    "signature": "2c9d254f4d792dda7508455299bb060ac24a9c36"
   },
   "compilationOptions": {
     "defines": [
@@ -23,6 +23,10 @@
     ".NETCoreApp,Version=v1.1": {
       "eventos.io.site/1.0.0": {
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "2.0.1",
+          "Eventos.IO.Application": "1.0.0",
+          "Eventos.IO.Infra.CrossCuting.Bus": "1.0.0",
+          "Eventos.IO.Infra.CrossCuting.IoC": "1.0.0",
           "Eventos.IO.Infra.Data": "1.0.0",
           "Microsoft.ApplicationInsights.AspNetCore": "2.0.0",
           "Microsoft.AspNetCore": "1.1.1",
@@ -46,6 +50,47 @@
         },
         "compile": {
           "Eventos.IO.Site.dll": {}
+        }
+      },
+      "automapper/6.0.2": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.3.0",
+          "System.Collections": "4.3.0",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Collections.Specialized": "4.3.0",
+          "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.Linq.Queryable": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        }
+      },
+      "automapper.extensions.microsoft.dependencyinjection/2.0.1": {
+        "dependencies": {
+          "AutoMapper": "6.0.2",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.1.0",
+          "Microsoft.Extensions.DependencyModel": "1.1.1"
+        },
+        "runtime": {
+          "lib/netstandard1.6/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
       "fluentvalidation/6.4.1": {
@@ -1696,6 +1741,9 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Collections.Specialized.dll": {}
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Collections.Specialized.dll": {}
         }
       },
       "system.componentmodel.primitives/4.3.0": {
@@ -1964,6 +2012,22 @@
           "lib/netstandard1.0/System.Text.Encodings.Web.dll": {}
         }
       },
+      "eventos.io.application/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "6.0.2",
+          "Eventos.IO.Domain": "1.0.0",
+          "Eventos.IO.Domain.Core": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.1.2",
+          "NETStandard.Library": "1.6.1",
+          "System.ComponentModel.Annotations": "4.3.0"
+        },
+        "runtime": {
+          "Eventos.IO.Application.dll": {}
+        },
+        "compile": {
+          "Eventos.IO.Application.dll": {}
+        }
+      },
       "eventos.io.domain/1.0.0": {
         "dependencies": {
           "Eventos.IO.Domain.Core": "1.0.0",
@@ -1987,6 +2051,35 @@
         },
         "compile": {
           "Eventos.IO.Domain.Core.dll": {}
+        }
+      },
+      "eventos.io.infra.crosscuting.bus/1.0.0": {
+        "dependencies": {
+          "Eventos.IO.Domain.Core": "1.0.0",
+          "NETStandard.Library": "1.6.1",
+          "System.ComponentModel": "4.3.0"
+        },
+        "runtime": {
+          "Eventos.IO.Infra.CrossCuting.Bus.dll": {}
+        },
+        "compile": {
+          "Eventos.IO.Infra.CrossCuting.Bus.dll": {}
+        }
+      },
+      "eventos.io.infra.crosscuting.ioc/1.0.0": {
+        "dependencies": {
+          "Eventos.IO.Application": "1.0.0",
+          "Eventos.IO.Domain": "1.0.0",
+          "Eventos.IO.Infra.CrossCuting.Bus": "1.0.0",
+          "Eventos.IO.Infra.Data": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.1.0",
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "Eventos.IO.Infra.CrossCuting.IoC.dll": {}
+        },
+        "compile": {
+          "Eventos.IO.Infra.CrossCuting.IoC.dll": {}
         }
       },
       "eventos.io.infra.data/1.0.0": {
@@ -3668,6 +3761,20 @@
       "serviceable": false,
       "sha512": ""
     },
+    "automapper/6.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uI4uPyibgP4+2zn21fVqy0ep+eYeB5IcfjanyUESj+F0qcrOYpAW4iH2+xKET0vfhgJn4U1c4xN3stKUhygTmQ==",
+      "path": "automapper/6.0.2",
+      "hashPath": "automapper.6.0.2.nupkg.sha512"
+    },
+    "automapper.extensions.microsoft.dependencyinjection/2.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-YOMI/TncM6gBqXQm3SiHIhhe4TDcAHjnMFZJmqNBdR82BvTrx605KV8I/Pdmuz7GIgGJjnu8YJzyPrMMlZY4JQ==",
+      "path": "automapper.extensions.microsoft.dependencyinjection/2.0.1",
+      "hashPath": "automapper.extensions.microsoft.dependencyinjection.2.0.1.nupkg.sha512"
+    },
     "fluentvalidation/6.4.1": {
       "type": "package",
       "serviceable": true,
@@ -4522,12 +4629,27 @@
       "path": "system.text.encodings.web/4.3.0",
       "hashPath": "system.text.encodings.web.4.3.0.nupkg.sha512"
     },
+    "eventos.io.application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "eventos.io.domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
     "eventos.io.domain.core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "eventos.io.infra.crosscuting.bus/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "eventos.io.infra.crosscuting.ioc/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

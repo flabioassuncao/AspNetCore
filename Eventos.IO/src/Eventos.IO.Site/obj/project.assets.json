@@ -2,6 +2,49 @@
   "version": 2,
   "targets": {
     ".NETCoreApp,Version=v1.1": {
+      "AutoMapper/6.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.3.0",
+          "System.Collections": "4.3.0",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Collections.Specialized": "4.3.0",
+          "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.Linq.Queryable": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "6.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.1.0",
+          "Microsoft.Extensions.DependencyModel": "1.1.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "FluentValidation/6.4.1": {
         "type": "package",
         "dependencies": {
@@ -2421,7 +2464,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Collections.Specialized.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Collections.Specialized.dll": {}
@@ -4322,6 +4365,18 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "Eventos.IO.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "AutoMapper": "6.0.2",
+          "Eventos.IO.Domain": "1.0.0",
+          "Eventos.IO.Domain.Core": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.1.2",
+          "NETStandard.Library": "1.6.1",
+          "System.ComponentModel.Annotations": "4.3.0"
+        }
+      },
       "Eventos.IO.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
@@ -4336,6 +4391,27 @@
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
           "FluentValidation": "6.4.1",
+          "NETStandard.Library": "1.6.1"
+        }
+      },
+      "Eventos.IO.Infra.CrossCuting.Bus/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "Eventos.IO.Domain.Core": "1.0.0",
+          "NETStandard.Library": "1.6.1",
+          "System.ComponentModel": "4.3.0"
+        }
+      },
+      "Eventos.IO.Infra.CrossCuting.IoC/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "Eventos.IO.Application": "1.0.0",
+          "Eventos.IO.Domain": "1.0.0",
+          "Eventos.IO.Infra.CrossCuting.Bus": "1.0.0",
+          "Eventos.IO.Infra.Data": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.1.0",
           "NETStandard.Library": "1.6.1"
         }
       },
@@ -4358,6 +4434,33 @@
     }
   },
   "libraries": {
+    "AutoMapper/6.0.2": {
+      "sha512": "uI4uPyibgP4+2zn21fVqy0ep+eYeB5IcfjanyUESj+F0qcrOYpAW4iH2+xKET0vfhgJn4U1c4xN3stKUhygTmQ==",
+      "type": "package",
+      "path": "automapper/6.0.2",
+      "files": [
+        "automapper.6.0.2.nupkg.sha512",
+        "automapper.nuspec",
+        "lib/net45/AutoMapper.dll",
+        "lib/net45/AutoMapper.xml",
+        "lib/netstandard1.1/AutoMapper.dll",
+        "lib/netstandard1.1/AutoMapper.xml",
+        "lib/netstandard1.3/AutoMapper.dll",
+        "lib/netstandard1.3/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/2.0.1": {
+      "sha512": "YOMI/TncM6gBqXQm3SiHIhhe4TDcAHjnMFZJmqNBdR82BvTrx605KV8I/Pdmuz7GIgGJjnu8YJzyPrMMlZY4JQ==",
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/2.0.1",
+      "files": [
+        "automapper.extensions.microsoft.dependencyinjection.2.0.1.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "lib/net451/AutoMapper.Extensions.Microsoft.DependencyInjection.dll",
+        "lib/netstandard1.1/AutoMapper.Extensions.Microsoft.DependencyInjection.dll",
+        "lib/netstandard1.6/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
+      ]
+    },
     "FluentValidation/6.4.1": {
       "sha512": "0W0LTJFIhQxyJQ2CAqCbNPYt/ujNOmRbp3ktqTNRARfx2usyFOj2XO0F8oDSLqnkPngzAiCvYw+WsgBWOGkB8g==",
       "type": "package",
@@ -11180,6 +11283,11 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
+    "Eventos.IO.Application/1.0.0": {
+      "type": "project",
+      "path": "../Eventos.IO.Application/Eventos.IO.Application.csproj",
+      "msbuildProject": "../Eventos.IO.Application/Eventos.IO.Application.csproj"
+    },
     "Eventos.IO.Domain/1.0.0": {
       "type": "project",
       "path": "../Eventos.IO.Domain/Eventos.IO.Domain.csproj",
@@ -11190,6 +11298,16 @@
       "path": "../Eventos.IO.Domain.Core/Eventos.IO.Domain.Core.csproj",
       "msbuildProject": "../Eventos.IO.Domain.Core/Eventos.IO.Domain.Core.csproj"
     },
+    "Eventos.IO.Infra.CrossCuting.Bus/1.0.0": {
+      "type": "project",
+      "path": "../Eventos.IO.Infra.CrossCuting.Bus/Eventos.IO.Infra.CrossCuting.Bus.csproj",
+      "msbuildProject": "../Eventos.IO.Infra.CrossCuting.Bus/Eventos.IO.Infra.CrossCuting.Bus.csproj"
+    },
+    "Eventos.IO.Infra.CrossCuting.IoC/1.0.0": {
+      "type": "project",
+      "path": "../Eventos.IO.Infra.CrossCuting.IoC/Eventos.IO.Infra.CrossCuting.IoC.csproj",
+      "msbuildProject": "../Eventos.IO.Infra.CrossCuting.IoC/Eventos.IO.Infra.CrossCuting.IoC.csproj"
+    },
     "Eventos.IO.Infra.Data/1.0.0": {
       "type": "project",
       "path": "../Eventos.IO.Infra.Data/Eventos.IO.Infra.Data.csproj",
@@ -11198,6 +11316,10 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v1.1": [
+      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 2.0.1",
+      "Eventos.IO.Application >= 1.0.0",
+      "Eventos.IO.Infra.CrossCuting.Bus >= 1.0.0",
+      "Eventos.IO.Infra.CrossCuting.IoC >= 1.0.0",
       "Eventos.IO.Infra.Data >= 1.0.0",
       "Microsoft.ApplicationInsights.AspNetCore >= 2.0.0",
       "Microsoft.AspNetCore >= 1.1.1",
@@ -11236,6 +11358,15 @@
           "projectReferences": {
             "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Infra.Data\\Eventos.IO.Infra.Data.csproj": {
               "projectPath": "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Infra.Data\\Eventos.IO.Infra.Data.csproj"
+            },
+            "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Infra.CrossCuting.Bus\\Eventos.IO.Infra.CrossCuting.Bus.csproj": {
+              "projectPath": "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Infra.CrossCuting.Bus\\Eventos.IO.Infra.CrossCuting.Bus.csproj"
+            },
+            "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Infra.CrossCuting.IoC\\Eventos.IO.Infra.CrossCuting.IoC.csproj": {
+              "projectPath": "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Infra.CrossCuting.IoC\\Eventos.IO.Infra.CrossCuting.IoC.csproj"
+            },
+            "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Application\\Eventos.IO.Application.csproj": {
+              "projectPath": "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Application\\Eventos.IO.Application.csproj"
             }
           }
         }
@@ -11264,6 +11395,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "1.1.0"
+          },
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+            "target": "Package",
+            "version": "2.0.1"
           },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "suppressParent": "All",

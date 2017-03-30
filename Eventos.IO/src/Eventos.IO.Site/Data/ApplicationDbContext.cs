@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Eventos.IO.Site.Models;
+using Eventos.IO.Application.ViewModels;
 
 namespace Eventos.IO.Site.Data
 {
@@ -22,5 +23,7 @@ namespace Eventos.IO.Site.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+
+        public DbSet<Eventos.IO.Application.ViewModels.EventoViewModel> EventoViewModel { get; set; }
     }
 }
