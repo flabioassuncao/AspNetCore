@@ -36,9 +36,9 @@ namespace Eventos.IO.Infra.Data.Repository
             return Dbset.AsNoTracking().Where(predicate);
         }
 
-        public virtual TEntity ObterPorId(Guid Id)
+        public virtual TEntity ObterPorId(Guid id)
         {
-            return Dbset.AsNoTracking().FirstOrDefault(t => t.Id == Id);
+            return Dbset.AsNoTracking().FirstOrDefault(t => t.Id == id);
         }
 
         public virtual IEnumerable<TEntity> ObterTodos()
@@ -46,9 +46,9 @@ namespace Eventos.IO.Infra.Data.Repository
             return Dbset.ToList();
         }
 
-        public virtual void Remove(Guid Id)
+        public virtual void Remove(Guid id)
         {
-            Dbset.Remove(Dbset.Find(Id));
+            Dbset.Remove(Dbset.Find(id));
         }
 
         public int SaveChanges()

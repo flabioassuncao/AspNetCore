@@ -1,0 +1,11 @@
+
+
+@if(ViewData.ModelState.ErrorCount > 0)
+{
+    <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert">x</button>
+        <h3 id="msgRetorno">Opa, alguma coisa não seu certo:</h3>
+        <div asp-validation-summary="All" class="text-danger"></div>
+        @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+    </div>
+}

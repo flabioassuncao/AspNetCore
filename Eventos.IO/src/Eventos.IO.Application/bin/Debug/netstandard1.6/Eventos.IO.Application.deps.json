@@ -1557,7 +1557,8 @@
         "dependencies": {
           "Eventos.IO.Domain.Core": "1.0.0",
           "FluentValidation": "6.4.1",
-          "NETStandard.Library": "1.6.1"
+          "NETStandard.Library": "1.6.1",
+          "System.Security.Claims": "4.3.0"
         },
         "runtime": {
           "Eventos.IO.Domain.dll": {}

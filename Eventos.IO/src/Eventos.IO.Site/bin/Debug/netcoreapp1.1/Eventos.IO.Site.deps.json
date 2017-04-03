@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "2c9d254f4d792dda7508455299bb060ac24a9c36"
+    "signature": "018188dabd3e3d8d35f45a226ba5c77b56579832"
   },
   "compilationOptions": {
     "defines": [
@@ -91,6 +91,34 @@
         },
         "compile": {
           "lib/netstandard1.6/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
+      "dapper/1.50.2": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Collections.NonGeneric": "4.3.0",
+          "System.Data.SqlClient": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Emit": "4.3.0",
+          "System.Reflection.Emit.Lightweight": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Xml.XDocument": "4.3.0",
+          "System.Xml.XmlDocument": "4.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Dapper.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Dapper.dll": {}
         }
       },
       "fluentvalidation/6.4.1": {
@@ -2032,7 +2060,8 @@
         "dependencies": {
           "Eventos.IO.Domain.Core": "1.0.0",
           "FluentValidation": "6.4.1",
-          "NETStandard.Library": "1.6.1"
+          "NETStandard.Library": "1.6.1",
+          "System.Security.Claims": "4.3.0"
         },
         "runtime": {
           "Eventos.IO.Domain.dll": {}
@@ -2084,6 +2113,7 @@
       },
       "eventos.io.infra.data/1.0.0": {
         "dependencies": {
+          "Dapper": "1.50.2",
           "Eventos.IO.Domain": "1.0.0",
           "Eventos.IO.Domain.Core": "1.0.0",
           "Microsoft.EntityFrameworkCore": "1.1.1",
@@ -3723,6 +3753,9 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0"
         },
+        "compile": {
+          "ref/netstandard1.3/System.Xml.XmlDocument.dll": {}
+        },
         "compileOnly": true
       },
       "system.xml.xpath/4.0.1": {
@@ -3774,6 +3807,13 @@
       "sha512": "sha512-YOMI/TncM6gBqXQm3SiHIhhe4TDcAHjnMFZJmqNBdR82BvTrx605KV8I/Pdmuz7GIgGJjnu8YJzyPrMMlZY4JQ==",
       "path": "automapper.extensions.microsoft.dependencyinjection/2.0.1",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.2.0.1.nupkg.sha512"
+    },
+    "dapper/1.50.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-31Ju5VGyNNc66OAsw+SCp1TWPBuyw8ZBdkMG5pSUPChZcy27s2GhVz5B9INP4f25mPqfiJ+mfeHy9JAJyyT+LQ==",
+      "path": "dapper/1.50.2",
+      "hashPath": "dapper.1.50.2.nupkg.sha512"
     },
     "fluentvalidation/6.4.1": {
       "type": "package",

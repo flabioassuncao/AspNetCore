@@ -8,14 +8,18 @@ using Microsoft.EntityFrameworkCore;
 using Eventos.IO.Application.ViewModels;
 using Eventos.IO.Site.Data;
 using Eventos.IO.Application.Interfaces;
+using Eventos.IO.Domain.Core.Notifications;
+using Eventos.IO.Domain.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Eventos.IO.Site.Controllers
 {
-    public class EventosController : Controller
+    public class EventosController : BaseController
     {
         private readonly IEventoAppService _eventoAppService;
 
-        public EventosController(IEventoAppService eventoAppService)
+        public EventosController(IEventoAppService eventoAppService, IDomainNotificationHandler<DomainNotification> notification, IUser user)
+            :base(notification, user)
         {
             _eventoAppService = eventoAppService;    
         }
@@ -40,23 +44,30 @@ namespace Eventos.IO.Site.Controllers
 
             return View(eventoViewModel);
         }
-        
+
+        [Authorize]
         public IActionResult Create()
         {
             return View();
         }
 
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(EventoViewModel eventoViewModel)
         {
             if (!ModelState.IsValid) return View(eventoViewModel);
 
+            eventoViewModel.OrganizadorId = OrganizadroId;
+
             _eventoAppService.Registrar(eventoViewModel);
+
+            ViewBag.RetornoPost = OperacaoValida() ? "sucess,Evento registrado com sucesso!" : "error,Evento não registrado, verifique as mensagens!";
             
             return View(eventoViewModel);
         }
-        
+
+        [Authorize]
         public IActionResult Edit(Guid? id)
         {
             if (id == null)
@@ -72,7 +83,8 @@ namespace Eventos.IO.Site.Controllers
 
             return View(eventoViewModel);
         }
-        
+
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(EventoViewModel eventoViewModel)
@@ -81,11 +93,12 @@ namespace Eventos.IO.Site.Controllers
 
             _eventoAppService.Atualizar(eventoViewModel);
 
-            //Validar se a operação ocorreu com sucesso
+            ViewBag.RetornoPost = OperacaoValida() ? "sucess,Evento atualizado com sucesso!" : "error,Evento não atualizado, verifique as mensagens!";
 
             return View(eventoViewModel);
         }
-        
+
+        [Authorize]
         public IActionResult Delete(Guid? id)
         {
             if (id == null)
@@ -102,7 +115,8 @@ namespace Eventos.IO.Site.Controllers
 
             return View(eventoViewModel);
         }
-        
+
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(Guid id)

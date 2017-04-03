@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -12,11 +11,15 @@ using Microsoft.Extensions.Options;
 using Eventos.IO.Site.Models;
 using Eventos.IO.Site.Models.AccountViewModels;
 using Eventos.IO.Site.Services;
+using Eventos.IO.Domain.Core.Notifications;
+using Eventos.IO.Application.Interfaces;
+using Eventos.IO.Application.ViewModels;
+using Eventos.IO.Domain.Interfaces;
 
 namespace Eventos.IO.Site.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
@@ -24,6 +27,7 @@ namespace Eventos.IO.Site.Controllers
         private readonly ISmsSender _smsSender;
         private readonly ILogger _logger;
         private readonly string _externalCookieScheme;
+        private readonly IOrganizadorAppService _organizadorAppService;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
@@ -31,7 +35,10 @@ namespace Eventos.IO.Site.Controllers
             IOptions<IdentityCookieOptions> identityCookieOptions,
             IEmailSender emailSender,
             ISmsSender smsSender,
-            ILoggerFactory loggerFactory)
+            ILoggerFactory loggerFactory,
+            IDomainNotificationHandler<DomainNotification> notification,
+            IOrganizadorAppService organizadroAppService, IUser user)
+            :base(notification, user)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -116,6 +123,22 @@ namespace Eventos.IO.Site.Controllers
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    var organizador = new OrganizadorViewModel
+                    {
+                        Id = Guid.Parse(user.Id),
+                        Email = user.Email,
+                        Nome = model.Nome,
+                        CPF = model.CPF
+                    };
+
+                    _organizadorAppService.Registrar(organizador);
+
+                    if (!OperacaoValida())
+                    {
+                        await _userManager.DeleteAsync(user);
+                        return View(model);
+                    }
+
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=532713
                     // Send an email with this link
                     //var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
