@@ -9,8 +9,7 @@ namespace Eventos.IO.Infra.Data.Repository
 {
     public class OrganizadorRepository : Repository<Organizador>, IOrganizadorRepository
     {
-        public OrganizadorRepository(EventosContext context) 
-            : base(context)
+        public OrganizadorRepository(EventosContext context) : base(context)
         {
         }
     }

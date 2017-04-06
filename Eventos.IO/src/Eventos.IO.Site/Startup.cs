@@ -5,14 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Eventos.IO.Site.Data;
-using Eventos.IO.Site.Models;
-using Eventos.IO.Site.Services;
-using Eventos.IO.Application.Interfaces;
-using Eventos.IO.Application.Services;
 using Microsoft.AspNetCore.Http;
 using AutoMapper;
-using Eventos.IO.Domain.Interfaces;
+using Eventos.IO.Infra.CrossCutting.Identity.Models;
+using Eventos.IO.Infra.CrossCutting.Identity.Data;
+using Eventos.IO.Infra.CrossCuting.IoC;
 
 namespace Eventos.IO.Site
 {
@@ -52,11 +49,7 @@ namespace Eventos.IO.Site
             services.AddAutoMapper();
 
             // Add application services.
-            services.AddTransient<IEmailSender, AuthMessageSender>();
-            services.AddTransient<ISmsSender, AuthMessageSender>();
-
-            services.AddScoped<IUser, AspNetUser>();
-
+            
             RegisterServices(services);
 
 
@@ -97,7 +90,7 @@ namespace Eventos.IO.Site
 
         private static void RegisterServices(IServiceCollection services)
         {
-            Infra.CrossCuting.IoC.NativeInjectorBootStrapper.RegisterRegisterService(services);
+            NativeInjectorBootStrapper.RegisterRegisterService(services);
         }
     }
 }

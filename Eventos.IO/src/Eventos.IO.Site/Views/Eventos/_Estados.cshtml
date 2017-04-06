@@ -1,0 +1,10 @@
+﻿@using Eventos.IO.Application.ViewModels
+@model EventoViewModel
+
+@{
+    var estados = (IEnumerable<SelectListItem>)new EnderecoViewModel().Categorias();
+}
+
+<select asp-for="Endereco.Estado" asp-items="@estados" class="form-control">
+
+</select>

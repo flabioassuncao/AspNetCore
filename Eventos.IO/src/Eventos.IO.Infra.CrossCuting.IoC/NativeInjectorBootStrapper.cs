@@ -13,6 +13,9 @@ using Eventos.IO.Domain.Interfaces;
 using Eventos.IO.Domain.Organizadores.Commands;
 using Eventos.IO.Domain.Organizadores.Events;
 using Eventos.IO.Domain.Organizadores.Repository;
+using Eventos.IO.Infra.CrossCutting.Identity.Models;
+using Eventos.IO.Infra.CrossCutting.Identity.Services;
+using Eventos.IO.Infra.Data.Context;
 using Eventos.IO.Infra.Data.Repository;
 using Eventos.IO.Infra.Data.UoW;
 using Microsoft.AspNetCore.Http;
@@ -39,6 +42,9 @@ namespace Eventos.IO.Infra.CrossCuting.IoC
             service.AddScoped<IHandler<AtualizarEventoCommand>, EventoCommandHandler>();
             service.AddScoped<IHandler<ExcluirEventoCommand>, EventoCommandHandler>();
 
+            service.AddScoped<IHandler<AtualizarEnderecoEventoCommand>, EventoCommandHandler>();
+            service.AddScoped<IHandler<IncluirEnderecoEventoCommand>, EventoCommandHandler>();
+
             service.AddScoped<IHandler<RegistrarOrganizadorCommand>, OrganizadorCommandHandler>();
 
             //Domain - Events
@@ -47,15 +53,24 @@ namespace Eventos.IO.Infra.CrossCuting.IoC
             service.AddScoped<IHandler<EventoAtualizadoEvent>, EventoEventHandler>();
             service.AddScoped<IHandler<EventoExcluidoEvent>, EventoEventHandler>();
 
+            service.AddScoped<IHandler<EnderecoEventoAtualizadoEvent>, EventoEventHandler>();
+            service.AddScoped<IHandler<EnderecoEventoAdicionadoEvent>, EventoEventHandler>();
+
             service.AddScoped<IHandler<OrganizadorRegistradoEvent>, OrganizadorEventHandler>();
 
             // Infra - Data
             service.AddScoped<IEventoRepository, EventoRepository>();
             service.AddScoped<IOrganizadorRepository, OrganizadorRepository>();
             service.AddScoped<IUnitOfWork, UnitOfWork>();
+            service.AddScoped<EventosContext>();
 
             //Infra - Bus
             service.AddScoped<IBus, Bus.InMemoryBus>();
+
+            //Infra - Identity
+            service.AddTransient<IEmailSender, AuthMessageSender>();
+            service.AddTransient<ISmsSender, AuthMessageSender>();
+            service.AddScoped<IUser, AspNetUser>();
         }
     }
 }

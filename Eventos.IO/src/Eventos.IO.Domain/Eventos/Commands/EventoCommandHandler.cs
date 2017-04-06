@@ -15,17 +15,21 @@ namespace Eventos.IO.Domain.Eventos.CommandHandlers
     public class EventoCommandHandler : CommandHandler,
         IHandler<RegistrarEventoCommand>,
         IHandler<AtualizarEventoCommand>,
-        IHandler<ExcluirEventoCommand>
+        IHandler<ExcluirEventoCommand>,
+        IHandler<IncluirEnderecoEventoCommand>,
+        IHandler<AtualizarEnderecoEventoCommand>
 
     {
         private readonly IEventoRepository _eventoRepository;
         private readonly IBus _bus;
+        private readonly IUser _user;
 
-        public EventoCommandHandler(IEventoRepository eventoRepository, IUnitOfWork uow, IBus bus, IDomainNotificationHandler<DomainNotification> notifications)
+        public EventoCommandHandler(IEventoRepository eventoRepository, IUnitOfWork uow, IBus bus, IDomainNotificationHandler<DomainNotification> notifications, IUser user)
             :base(uow, bus, notifications)
         {
             _eventoRepository = eventoRepository;
             _bus = bus;
+            _user = user;
         }
 
 
@@ -51,7 +55,6 @@ namespace Eventos.IO.Domain.Eventos.CommandHandlers
             //Validações de negocio
             
 
-
             //Persistencia
             _eventoRepository.Adicionar(evento);
 
@@ -68,7 +71,27 @@ namespace Eventos.IO.Domain.Eventos.CommandHandlers
 
             if (!EventoExistente(message.Id, message.MessageType)) return;
 
+            //Jeito 1
+            //if(eventoAtual.OrganizadorId != message.OrganizadorId)
+            //{
+            //    _bus.RaiseEvent(new DomainNotification(message.MessageType, "Evento não pertence ao organizador!"));
+            //    return;
+            //}
+
+            //Jeito 2
+            if (eventoAtual.OrganizadorId != _user.GetUserId())
+            {
+                _bus.RaiseEvent(new DomainNotification(message.MessageType, "Evento não pertence ao organizador!"));
+                return;
+            }
+
             var evento = Evento.EventoFactory.NovoEventoCompleto(message.Id, message.Nome, message.DescricaoCurta, message.DescricaoLonga, message.DataInicio, message.DataFim, message.Gratuito, message.Valor, message.Online, message.NomeEmpresa, message.OrganizadorId, eventoAtual.Endereco, message.CategoriaId);
+
+            if(!evento.Online && evento.Endereco == null)
+            {
+                _bus.RaiseEvent(new DomainNotification(message.MessageType, "Não é possivel atualizar o evento sem informar um enderereço"));
+                return;
+            }
 
             if (!EventoValido(evento)) return;
 
@@ -85,7 +108,18 @@ namespace Eventos.IO.Domain.Eventos.CommandHandlers
         {
             if (!EventoExistente(message.Id, message.MessageType)) return;
 
-            _eventoRepository.Remove(message.Id);
+            var eventoAtual = _eventoRepository.ObterPorId(message.Id);
+
+            if (eventoAtual.OrganizadorId != _user.GetUserId())
+            {
+                _bus.RaiseEvent(new DomainNotification(message.MessageType, "Evento não pertence ao organizador!"));
+                return;
+            }
+
+            //Validações de negocio 
+            eventoAtual.ExcluirEvento();
+            
+            _eventoRepository.Atualizar(eventoAtual);
 
             if (Commit())
                 _bus.RaiseEvent(new EventoExcluidoEvent(message.Id));
@@ -108,5 +142,40 @@ namespace Eventos.IO.Domain.Eventos.CommandHandlers
             _bus.RaiseEvent(new DomainNotification(messageType, "Evento não encontrado"));
             return false;
         }
+
+        public void Handle(IncluirEnderecoEventoCommand message)
+        {
+            var endereco = new Endereco(message.Id, message.Logradouro, message.Numero, message.Complemento, message.Bairro, message.CEP, message.Cidade, message.Estado, message.EventoId.Value);
+            if (!endereco.EhValido())
+            {
+                NotificarValidacoesErro(endereco.ValidationResult);
+                return;
+            }
+
+            _eventoRepository.AdicionarEndereco(endereco);
+
+            if (Commit())
+            {
+                _bus.RaiseEvent(new EnderecoEventoAdicionadoEvent(endereco.Id, endereco.Logradouro, endereco.Numero, endereco.Complemento, endereco.Bairro, endereco.CEP, endereco.Cidade, endereco.Estado, endereco.EventoId.Value));
+            }
+        }
+
+        public void Handle(AtualizarEnderecoEventoCommand message)
+        {
+            var endereco = new Endereco(message.Id, message.Logradouro, message.Numero, message.Complemento, message.Bairro, message.CEP, message.Cidade, message.Estado, message.EventoId.Value);
+            if (!endereco.EhValido())
+            {
+                NotificarValidacoesErro(endereco.ValidationResult);
+                return;
+            }
+
+            _eventoRepository.AtualizarEndereco(endereco);
+
+            if (Commit())
+            {
+                _bus.RaiseEvent(new EnderecoEventoAtualizadoEvent(endereco.Id, endereco.Logradouro, endereco.Numero, endereco.Complemento, endereco.Bairro, endereco.CEP, endereco.Cidade, endereco.Estado, endereco.EventoId.Value));
+            }
+        }
+
     }
 }

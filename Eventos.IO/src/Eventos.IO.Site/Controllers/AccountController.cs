@@ -8,13 +8,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Eventos.IO.Site.Models;
-using Eventos.IO.Site.Models.AccountViewModels;
-using Eventos.IO.Site.Services;
 using Eventos.IO.Domain.Core.Notifications;
 using Eventos.IO.Application.Interfaces;
 using Eventos.IO.Application.ViewModels;
 using Eventos.IO.Domain.Interfaces;
+using Eventos.IO.Infra.CrossCutting.Identity.Models;
+using Eventos.IO.Infra.CrossCutting.Identity.Services;
+using Eventos.IO.Infra.CrossCutting.Identity.Models.AccountViewModels;
 
 namespace Eventos.IO.Site.Controllers
 {
@@ -45,6 +45,7 @@ namespace Eventos.IO.Site.Controllers
             _externalCookieScheme = identityCookieOptions.Value.ExternalCookieAuthenticationScheme;
             _emailSender = emailSender;
             _smsSender = smsSender;
+            _organizadorAppService = organizadroAppService;
             _logger = loggerFactory.CreateLogger<AccountController>();
         }
 

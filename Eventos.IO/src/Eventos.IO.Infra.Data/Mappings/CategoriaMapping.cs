@@ -20,7 +20,7 @@ namespace Eventos.IO.Infra.Data.Mappings
                 .Ignore(c => c.CascadeMode);
 
             builder
-                .ToTable("categorias");
+                .ToTable("Categorias");
         }
     }
 }

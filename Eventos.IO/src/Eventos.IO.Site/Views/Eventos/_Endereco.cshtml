@@ -1,0 +1,89 @@
+@model Eventos.IO.Application.ViewModels.EventoViewModel
+
+@*<form asp-action="_Endereco">
+    <div class="form-horizontal">
+        <h4>EnderecoViewModel</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+        
+        @*<div class="form-group">
+            <label asp-for="Id" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+        </div>*@
+<div class="form-horizontal">
+
+    <input type="hidden" asp-for="Endereco.EventoId"/>
+    <input type="hidden" asp-for="Endereco.Id" />
+
+    <div class="form-group">
+        <label asp-for="Endereco.Logradouro" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Endereco.Logradouro" class="form-control" />
+            <span asp-validation-for="Endereco.Logradouro" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Endereco.Numero" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Endereco.Numero" class="form-control" />
+            <span asp-validation-for="Endereco.Numero" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Endereco.Complemento" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Endereco.Complemento" class="form-control" />
+            <span asp-validation-for="Endereco.Complemento" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Endereco.Bairro" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Endereco.Bairro" class="form-control" />
+            <span asp-validation-for="Endereco.Bairro" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Endereco.CEP" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Endereco.CEP" class="form-control" />
+            <span asp-validation-for="Endereco.CEP" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Endereco.Cidade" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Endereco.Cidade" class="form-control" />
+            <span asp-validation-for="Endereco.Cidade" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Endereco.Estado" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            @Html.Partial("_Estados")
+            <span asp-validation-for="Endereco.Estado" class="text-danger"></span>
+        </div>
+    </div>
+</div>
+        @*<div class="form-group">
+            <label asp-for="EventoId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="EventoId" class="form-control" />
+                <span asp-validation-for="EventoId" class="text-danger"></span>
+            </div>
+        </div>*@
+        @*<div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+

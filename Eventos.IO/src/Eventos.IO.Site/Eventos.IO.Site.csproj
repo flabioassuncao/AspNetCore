@@ -38,6 +38,7 @@
     <ProjectReference Include="..\Eventos.IO.Application\Eventos.IO.Application.csproj" />
     <ProjectReference Include="..\Eventos.IO.Infra.CrossCuting.Bus\Eventos.IO.Infra.CrossCuting.Bus.csproj" />
     <ProjectReference Include="..\Eventos.IO.Infra.CrossCuting.IoC\Eventos.IO.Infra.CrossCuting.IoC.csproj" />
+    <ProjectReference Include="..\Eventos.IO.Infra.CrossCutting.Identity\Eventos.IO.Infra.CrossCutting.Identity.csproj" />
     <ProjectReference Include="..\Eventos.IO.Infra.Data\Eventos.IO.Infra.Data.csproj" />
   </ItemGroup>
   <ItemGroup>

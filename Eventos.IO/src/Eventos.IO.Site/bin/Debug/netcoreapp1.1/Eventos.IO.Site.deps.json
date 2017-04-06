@@ -27,6 +27,7 @@
           "Eventos.IO.Application": "1.0.0",
           "Eventos.IO.Infra.CrossCuting.Bus": "1.0.0",
           "Eventos.IO.Infra.CrossCuting.IoC": "1.0.0",
+          "Eventos.IO.Infra.CrossCutting.Identity": "1.0.0",
           "Eventos.IO.Infra.Data": "1.0.0",
           "Microsoft.ApplicationInsights.AspNetCore": "2.0.0",
           "Microsoft.AspNetCore": "1.1.1",
@@ -2100,6 +2101,7 @@
           "Eventos.IO.Application": "1.0.0",
           "Eventos.IO.Domain": "1.0.0",
           "Eventos.IO.Infra.CrossCuting.Bus": "1.0.0",
+          "Eventos.IO.Infra.CrossCutting.Identity": "1.0.0",
           "Eventos.IO.Infra.Data": "1.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.1.0",
           "NETStandard.Library": "1.6.1"
@@ -2109,6 +2111,29 @@
         },
         "compile": {
           "Eventos.IO.Infra.CrossCuting.IoC.dll": {}
+        }
+      },
+      "eventos.io.infra.crosscutting.identity/1.0.0": {
+        "dependencies": {
+          "Eventos.IO.Domain": "1.0.0",
+          "Microsoft.AspNetCore.Authorization": "1.1.1",
+          "Microsoft.AspNetCore.Http.Abstractions": "1.1.1",
+          "Microsoft.AspNetCore.Identity": "1.1.1",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.1.1",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Design": "1.1.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Tools": "1.1.0",
+          "Microsoft.Extensions.Configuration": "1.1.1",
+          "Microsoft.Extensions.Configuration.FileExtensions": "1.1.1",
+          "Microsoft.Extensions.Configuration.Json": "1.1.1",
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "Eventos.IO.Infra.CrossCutting.Identity.dll": {}
+        },
+        "compile": {
+          "Eventos.IO.Infra.CrossCutting.Identity.dll": {}
         }
       },
       "eventos.io.infra.data/1.0.0": {
@@ -4690,6 +4715,11 @@
       "sha512": ""
     },
     "eventos.io.infra.crosscuting.ioc/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "eventos.io.infra.crosscutting.identity/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

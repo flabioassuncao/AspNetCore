@@ -1,0 +1,28 @@
+@model Eventos.IO.Application.ViewModels.EventoViewModel
+
+@{ 
+    ViewData["Title"] = "Incluir Endereço";
+}
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">
+        <span aria-hidden="true">x</span><span class="sr-only">Fechar</span>
+    </button>
+    <h4 class="modal-title">@ViewData["Title"]</h4>
+</div>
+
+<form asp-action="IncluirEndereco">
+    <div class="modal-body">
+        <div class="form-horizontal">
+            <vc:summary />
+            @Html.Partial("_Endereco");
+
+            <div class="modal-footer">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Adicionar Endereço" class="btn btn-success" />
+                    <input type="button" class="btn btn-info" value="Fechar" data-dismiss="modal" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

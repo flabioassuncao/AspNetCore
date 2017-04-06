@@ -1,18 +1,20 @@
 @model Eventos.IO.Application.ViewModels.EventoViewModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Evento";
 }
 
-<h2>Edit</h2>
+<h2>@ViewData["Title"]</h2>
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" rel="stylesheet">
 
 <form asp-action="Edit">
     <div class="form-horizontal">
-        <h4>EventoViewModel</h4>
+        <h4>Lembre-se que muitas pessoas já podem ter visto esse evento!</h4>
         <hr />
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+        <vc:summary />
+
     <input type="hidden" asp-for="Id" />
         <input type="hidden" asp-for="OrganizadorId" />
         <div class="form-group">
@@ -89,17 +91,35 @@
                 <span asp-validation-for="NomeEmpresa" class="text-danger"></span>
             </div>
         </div>
+
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" id="btSubmit" value="Atualizar Evento" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-info">Voltar para Lista</a>
             </div>
         </div>
     </div>
 </form>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+
+<div id="EnderecoForm">
+    <div id="EnderecoTarget">
+        @Html.Partial("_DetalhesEndereco")
+    </div>
 </div>
+
+<div id="myModal" class="modal fade in">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="myModalContent"></div>
+        </div>
+    </div>
+</div>
+
+@*<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
@@ -109,7 +129,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/locales/bootstrap-datepicker.pt.min.js"></script>
 
     <script>
-            ValidacoesEvento();
+        ValidacoesEvento();
+        AjaxModal();
     </script>
 
     @{
@@ -118,25 +139,15 @@
             var notificacao = ViewBag.RetornoPost.ToString().Split(',');
 
             <script>
-                    toastr.options = {
-                        "closeButton": false,
-                        "debub": true,
-                        "newestOnTop": false,
-                        "progressBar": true,
-                        "positionClass": "toast-top-right",
-                        "preventDuplicates": true,
-                        "onclick": null,
-                        "showDuration": "300",
-                        "hideDuration": "1000",
-                        "timeOut": "5000",
-                        "extendTimeOut": "1000",
-                        "showEasing": "swing",
-                        "hideEasing": "linear",
-                        "showMethod": "fadeIn",
-                        "hideMethod": "fadeOut"
-                    }
-                    toastr["@notificacao[0]"]("@notificacao[1]");
+                toastr["@notificacao[0]"]("@notificacao[1]");
             </script>
+
+            if(notificacao[0] == "success")
+            {
+                <script>
+                    $("#btSubmit").prop("disabled", true);
+                </script>
+            }
         }
     }
 }

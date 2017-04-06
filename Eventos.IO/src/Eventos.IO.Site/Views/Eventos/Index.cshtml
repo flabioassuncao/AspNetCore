@@ -10,7 +10,7 @@
     <a asp-action="Create">Create New</a>
 </p>*@
 
-<div class="row">
+@*<div class="row">
     <div class="col-md-12">
         <div class="pull-left">
             <a asp-action="Create" class="btn btn-primary">
@@ -19,7 +19,7 @@
         </div>
     </div>
 </div>
-<br />
+<br />*@
 
 <table class="table">
     <thead>
@@ -74,15 +74,15 @@
                 @Html.DisplayFor(modelItem => item.Online)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">
+                @*<a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">
                     <span class="glyphicon glyphicon-pencil"></span>
-                </a> |
+                </a> |*@
                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-search"></span>   
-                 </a> |
+                    <span class="glyphicon glyphicon-search"></span> Ver Detalhes  
+                 </a> @*|
                 <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">
                     <span class="glyphicon glyphicon-trash"></span>
-                </a>
+                </a>*@
             </td>
         </tr>
 }

@@ -4440,8 +4440,28 @@
           "Eventos.IO.Application": "1.0.0",
           "Eventos.IO.Domain": "1.0.0",
           "Eventos.IO.Infra.CrossCuting.Bus": "1.0.0",
+          "Eventos.IO.Infra.CrossCutting.Identity": "1.0.0",
           "Eventos.IO.Infra.Data": "1.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.1.0",
+          "NETStandard.Library": "1.6.1"
+        }
+      },
+      "Eventos.IO.Infra.CrossCutting.Identity/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "Eventos.IO.Domain": "1.0.0",
+          "Microsoft.AspNetCore.Authorization": "1.1.1",
+          "Microsoft.AspNetCore.Http.Abstractions": "1.1.1",
+          "Microsoft.AspNetCore.Identity": "1.1.1",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.1.1",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.1.2",
+          "Microsoft.EntityFrameworkCore.Design": "1.1.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "1.1.1",
+          "Microsoft.EntityFrameworkCore.Tools": "1.1.0",
+          "Microsoft.Extensions.Configuration": "1.1.1",
+          "Microsoft.Extensions.Configuration.FileExtensions": "1.1.1",
+          "Microsoft.Extensions.Configuration.Json": "1.1.1",
           "NETStandard.Library": "1.6.1"
         }
       },
@@ -11356,6 +11376,11 @@
       "path": "../Eventos.IO.Infra.CrossCuting.IoC/Eventos.IO.Infra.CrossCuting.IoC.csproj",
       "msbuildProject": "../Eventos.IO.Infra.CrossCuting.IoC/Eventos.IO.Infra.CrossCuting.IoC.csproj"
     },
+    "Eventos.IO.Infra.CrossCutting.Identity/1.0.0": {
+      "type": "project",
+      "path": "../Eventos.IO.Infra.CrossCutting.Identity/Eventos.IO.Infra.CrossCutting.Identity.csproj",
+      "msbuildProject": "../Eventos.IO.Infra.CrossCutting.Identity/Eventos.IO.Infra.CrossCutting.Identity.csproj"
+    },
     "Eventos.IO.Infra.Data/1.0.0": {
       "type": "project",
       "path": "../Eventos.IO.Infra.Data/Eventos.IO.Infra.Data.csproj",
@@ -11368,6 +11393,7 @@
       "Eventos.IO.Application >= 1.0.0",
       "Eventos.IO.Infra.CrossCuting.Bus >= 1.0.0",
       "Eventos.IO.Infra.CrossCuting.IoC >= 1.0.0",
+      "Eventos.IO.Infra.CrossCutting.Identity >= 1.0.0",
       "Eventos.IO.Infra.Data >= 1.0.0",
       "Microsoft.ApplicationInsights.AspNetCore >= 2.0.0",
       "Microsoft.AspNetCore >= 1.1.1",
@@ -11409,6 +11435,9 @@
             },
             "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Infra.CrossCuting.Bus\\Eventos.IO.Infra.CrossCuting.Bus.csproj": {
               "projectPath": "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Infra.CrossCuting.Bus\\Eventos.IO.Infra.CrossCuting.Bus.csproj"
+            },
+            "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Infra.CrossCutting.Identity\\Eventos.IO.Infra.CrossCutting.Identity.csproj": {
+              "projectPath": "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Infra.CrossCutting.Identity\\Eventos.IO.Infra.CrossCutting.Identity.csproj"
             },
             "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Infra.CrossCuting.IoC\\Eventos.IO.Infra.CrossCuting.IoC.csproj": {
               "projectPath": "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Infra.CrossCuting.IoC\\Eventos.IO.Infra.CrossCuting.IoC.csproj"

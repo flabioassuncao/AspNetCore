@@ -1,0 +1,9 @@
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Services.Api\bin\Debug\netcoreapp1.1\Eventos.IO.Services.Api.deps.json
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Services.Api\bin\Debug\netcoreapp1.1\Eventos.IO.Services.Api.runtimeconfig.json
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Services.Api\bin\Debug\netcoreapp1.1\Eventos.IO.Services.Api.runtimeconfig.dev.json
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Services.Api\bin\Debug\netcoreapp1.1\Eventos.IO.Services.Api.dll
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Services.Api\bin\Debug\netcoreapp1.1\Eventos.IO.Services.Api.pdb
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Services.Api\obj\Debug\netcoreapp1.1\Eventos.IO.Services.Api.csprojResolveAssemblyReference.cache
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Services.Api\obj\Debug\netcoreapp1.1\Eventos.IO.Services.Api.AssemblyInfo.cs
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Services.Api\obj\Debug\netcoreapp1.1\Eventos.IO.Services.Api.dll
+C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Services.Api\obj\Debug\netcoreapp1.1\Eventos.IO.Services.Api.pdb

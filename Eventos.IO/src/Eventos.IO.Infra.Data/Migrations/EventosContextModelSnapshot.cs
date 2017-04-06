@@ -27,7 +27,7 @@ namespace Eventos.IO.Infra.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("categorias");
+                    b.ToTable("Categorias");
                 });
 
             modelBuilder.Entity("Eventos.IO.Domain.Eventos.Endereco", b =>
@@ -88,9 +88,10 @@ namespace Eventos.IO.Infra.Data.Migrations
                     b.Property<DateTime>("DataInicio");
 
                     b.Property<string>("DescricaoCurta")
-                        .HasColumnName("varchar(max)");
+                        .HasColumnType("varchar(150)");
 
-                    b.Property<string>("DescricaoLonga");
+                    b.Property<string>("DescricaoLonga")
+                        .HasColumnType("varchar(max)");
 
                     b.Property<Guid?>("EnderecoId");
 
@@ -100,11 +101,11 @@ namespace Eventos.IO.Infra.Data.Migrations
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnName("varchar(150)");
+                        .HasColumnType("varchar(150)");
 
                     b.Property<string>("NomeEmpresa")
                         .IsRequired()
-                        .HasColumnName("varchar(150)");
+                        .HasColumnType("varchar(150)");
 
                     b.Property<bool>("Online");
 

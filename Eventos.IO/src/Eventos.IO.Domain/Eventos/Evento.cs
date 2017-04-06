@@ -101,29 +101,25 @@ namespace Eventos.IO.Domain.Eventos
         private void ValidarValor()
         {
             if (!Gratuito)
-            {
                 RuleFor(c => c.Valor)
-                .ExclusiveBetween(1, 50000)
-                .WithMessage("O valor deve estar entre 1.00 e 50.000");
-            }
+                    .ExclusiveBetween(1, 50000)
+                    .WithMessage("O valor deve estar entre 1.00 e 50.000");
 
             if (Gratuito)
-            {
                 RuleFor(c => c.Valor)
-                .ExclusiveBetween(0, 0).When(e => e.Gratuito)
-                .WithMessage("O valor não deve ser difierente de 0 para um evento gratuito");
-            }
+                    .Equal(0).When(e => e.Gratuito)
+                    .WithMessage("O valor não deve diferente de 0 para um evento gratuito");
         }
 
         private void ValidarData()
         {
             RuleFor(c => c.DataInicio)
-                .GreaterThan(c => c.DataFim)
-                .WithMessage("A data de inicio deve ser maior que a data do final doe evento ");
+                .LessThan(c => c.DataFim)
+                .WithMessage("A data de início deve ser maior que a data do final do evento");
 
             RuleFor(c => c.DataInicio)
-                .LessThan(DateTime.Now)
-                .WithMessage("A data de inicio não pode ser maior que a data atual");
+                .GreaterThan(DateTime.Now)
+                .WithMessage("A data de início não deve ser menor que a data atual");
         }
 
         private void ValidarLocal()

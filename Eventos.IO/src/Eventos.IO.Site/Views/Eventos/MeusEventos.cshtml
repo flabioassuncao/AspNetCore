@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Eventos.IO.Application.ViewModels.EventoViewModel>
+
+@{
+    ViewData["Title"] = "Meus Eventos";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@*<p>
+    <a asp-action="Create">Create New</a>
+</p>*@
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="pull-left">
+            <a asp-action="Create" class="btn btn-primary">
+                <span title="Novo evento" class="glyphicon glyphicon-plus-sign"></span> Novo Evento 
+            </a>
+        </div>
+    </div>
+</div>
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataInicio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataFim)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Valor)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Online)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.DataInicio)*@
+                @item.DataInicio.ToString("d");
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.DataFim)*@
+                @item.DataFim.ToString("d");
+            </td>
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Gratuito)*@
+                @{ 
+                    if (item.Gratuito)
+                    {
+                        @Html.DisplayName("Gratuito");
+
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => item.Valor)
+                    }
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Online)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </a> |
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-search"></span>   
+                 </a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
