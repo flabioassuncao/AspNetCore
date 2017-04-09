@@ -35,6 +35,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos.IO.Infra.CrossCutti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos.IO.Services.Api", "src\Eventos.IO.Services.Api\Eventos.IO.Services.Api.csproj", "{CB237C8F-EB45-4D7A-AFDF-50B5D18E0B3F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventos.IO.Infra.CrossCutting.AspNetFilters", "src\Eventos.IO.Infra.CrossCutting.AspNetFilters\Eventos.IO.Infra.CrossCutting.AspNetFilters.csproj", "{3C3686DC-B96C-4D99-9DF3-06D06BF6C739}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{CB237C8F-EB45-4D7A-AFDF-50B5D18E0B3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB237C8F-EB45-4D7A-AFDF-50B5D18E0B3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB237C8F-EB45-4D7A-AFDF-50B5D18E0B3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C3686DC-B96C-4D99-9DF3-06D06BF6C739}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C3686DC-B96C-4D99-9DF3-06D06BF6C739}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C3686DC-B96C-4D99-9DF3-06D06BF6C739}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C3686DC-B96C-4D99-9DF3-06D06BF6C739}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,5 +99,6 @@ Global
 		{F7E2C645-13F7-4AE6-99F9-21B9EB66F566} = {25E9DFE7-B0C8-4605-A779-C351F477F06C}
 		{8D4AB22E-070A-44E8-817F-1E3A7B452F17} = {25E9DFE7-B0C8-4605-A779-C351F477F06C}
 		{CB237C8F-EB45-4D7A-AFDF-50B5D18E0B3F} = {756B46EA-0D29-41FE-8C4B-E82106F0DF85}
+		{3C3686DC-B96C-4D99-9DF3-06D06BF6C739} = {25E9DFE7-B0C8-4605-A779-C351F477F06C}
 	EndGlobalSection
 EndGlobal

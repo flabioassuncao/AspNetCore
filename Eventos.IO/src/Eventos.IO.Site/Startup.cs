@@ -10,6 +10,11 @@ using AutoMapper;
 using Eventos.IO.Infra.CrossCutting.Identity.Models;
 using Eventos.IO.Infra.CrossCutting.Identity.Data;
 using Eventos.IO.Infra.CrossCuting.IoC;
+using Eventos.IO.Infra.CrossCutting.AspNetFilters;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using Elmah.Io.Extensions.Logging;
+using Elmah.Io.AspNetCore;
 
 namespace Eventos.IO.Site
 {
@@ -45,7 +50,21 @@ namespace Eventos.IO.Site
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddMvc();
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("PodeLerEventos", policy => policy.RequireClaim("Eventos", "Ler"));
+                options.AddPolicy("PodeGravarEventos", policy => policy.RequireClaim("Eventos", "Gravar"));
+            });
+
+            services.AddLogging();
+
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(new ServiceFilterAttribute(typeof(GlobalExceptionHandlingFilter)));
+                options.Filters.Add(new ServiceFilterAttribute(typeof(GlobalActionLogger)));
+            });
+            
+
             services.AddAutoMapper();
 
             // Add application services.
@@ -61,6 +80,10 @@ namespace Eventos.IO.Site
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            loggerFactory.AddElmahIo("8ac7d8746ba740fe873ae222e7a786cc", new Guid("5021569c-1af9-485e-9b2d-e7d44c4a261f"));
+
+            app.UseElmahIo("8ac7d8746ba740fe873ae222e7a786cc", new Guid("5021569c-1af9-485e-9b2d-e7d44c4a261f"));
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -69,7 +92,8 @@ namespace Eventos.IO.Site
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/erros-de-aplicacao");
+                app.UseStatusCodePagesWithReExecute("/erros-de-aplicacao{0}");
             }
 
             app.UseStaticFiles();

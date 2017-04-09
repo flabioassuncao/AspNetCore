@@ -45,6 +45,9 @@
           "lib/netstandard1.6/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
+      "AutoRest/0.17.3": {
+        "type": "package"
+      },
       "Dapper/1.50.2": {
         "type": "package",
         "dependencies": {
@@ -72,6 +75,50 @@
         },
         "runtime": {
           "lib/netstandard1.3/Dapper.dll": {}
+        }
+      },
+      "Elmah.Io.AspNetCore/3.2.39-pre": {
+        "type": "package",
+        "dependencies": {
+          "Elmah.Io.Client": "3.0.41-pre",
+          "Microsoft.AspNetCore.Http": "1.1.1",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.1/Elmah.Io.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Elmah.Io.AspNetCore.dll": {}
+        }
+      },
+      "Elmah.Io.Client/3.0.41-pre": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.0.1",
+          "Microsoft.Rest.ClientRuntime": "2.3.1",
+          "Newtonsoft.Json": "9.0.1",
+          "System.Net.Http": "4.1.0"
+        },
+        "compile": {
+          "lib/netstandard1.1/Elmah.Io.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Elmah.Io.Client.dll": {}
+        }
+      },
+      "Elmah.Io.Extensions.Logging/3.1.22-pre": {
+        "type": "package",
+        "dependencies": {
+          "Elmah.Io.Client": "3.0.41-pre",
+          "Microsoft.Extensions.Logging.Abstractions": "1.1.1",
+          "Microsoft.Extensions.Logging.Filter": "1.1.1",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.1/Elmah.Io.Extensions.Logging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Elmah.Io.Extensions.Logging.dll": {}
         }
       },
       "FluentValidation/6.4.1": {
@@ -1655,6 +1702,20 @@
           "lib/netstandard1.3/Microsoft.Extensions.Logging.Debug.dll": {}
         }
       },
+      "Microsoft.Extensions.Logging.Filter/1.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "1.1.1",
+          "Microsoft.Extensions.Logging.Abstractions": "1.1.1",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.1/Microsoft.Extensions.Logging.Filter.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Microsoft.Extensions.Logging.Filter.dll": {}
+        }
+      },
       "Microsoft.Extensions.ObjectPool/1.1.0": {
         "type": "package",
         "dependencies": {
@@ -1852,6 +1913,19 @@
       },
       "Microsoft.NETCore.Windows.ApiSets/1.0.1": {
         "type": "package"
+      },
+      "Microsoft.Rest.ClientRuntime/2.3.5": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "[9.0.1, 10.0.0)"
+        },
+        "compile": {
+          "lib/netstandard1.5/Microsoft.Rest.ClientRuntime.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.5/Microsoft.Rest.ClientRuntime.dll": {}
+        }
       },
       "Microsoft.VisualBasic/10.1.0": {
         "type": "package",
@@ -2106,11 +2180,12 @@
           "System.Xml.XDocument": "4.3.0"
         }
       },
-      "Newtonsoft.Json/9.0.1": {
+      "Newtonsoft.Json/10.0.1-beta1": {
         "type": "package",
         "dependencies": {
           "Microsoft.CSharp": "4.0.1",
           "System.Collections": "4.0.11",
+          "System.ComponentModel.TypeConverter": "4.1.0",
           "System.Diagnostics.Debug": "4.0.11",
           "System.Dynamic.Runtime": "4.0.11",
           "System.Globalization": "4.0.11",
@@ -2123,6 +2198,7 @@
           "System.Resources.ResourceManager": "4.0.1",
           "System.Runtime": "4.1.0",
           "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.Numerics": "4.0.1",
           "System.Runtime.Serialization.Primitives": "4.1.1",
           "System.Text.Encoding": "4.0.11",
           "System.Text.Encoding.Extensions": "4.0.11",
@@ -2133,10 +2209,10 @@
           "System.Xml.XDocument": "4.0.11"
         },
         "compile": {
-          "lib/netstandard1.0/Newtonsoft.Json.dll": {}
+          "lib/netstandard1.1/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.0/Newtonsoft.Json.dll": {}
+          "lib/netstandard1.1/Newtonsoft.Json.dll": {}
         }
       },
       "NuGet.Frameworks/3.5.0": {
@@ -4440,10 +4516,28 @@
           "Eventos.IO.Application": "1.0.0",
           "Eventos.IO.Domain": "1.0.0",
           "Eventos.IO.Infra.CrossCuting.Bus": "1.0.0",
+          "Eventos.IO.Infra.CrossCutting.AspNetFilters": "1.0.0",
           "Eventos.IO.Infra.CrossCutting.Identity": "1.0.0",
           "Eventos.IO.Infra.Data": "1.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "1.1.0",
           "NETStandard.Library": "1.6.1"
+        }
+      },
+      "Eventos.IO.Infra.CrossCutting.AspNetFilters/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "1.1.1",
+          "Microsoft.AspNetCore.Http.Extensions": "1.1.1",
+          "Microsoft.AspNetCore.Mvc.Abstractions": "1.1.2",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.1.2",
+          "Microsoft.Extensions.Logging.Abstractions": "1.1.1",
+          "Microsoft.Rest.ClientRuntime": "2.3.5",
+          "NETStandard.Library": "1.6.1",
+          "autorest": "0.17.3",
+          "elmah.io.client": "3.0.41-pre",
+          "microsoft.aspnetcore.http.abstractions": "1.1.1",
+          "newtonsoft.Json": "10.0.1-beta1"
         }
       },
       "Eventos.IO.Infra.CrossCutting.Identity/1.0.0": {
@@ -4512,6 +4606,38 @@
         "lib/netstandard1.6/AutoMapper.Extensions.Microsoft.DependencyInjection.dll"
       ]
     },
+    "AutoRest/0.17.3": {
+      "sha512": "cOnViT3VlYEkQr/ZGSY14N2EcqSq84UI4iGVj9ddMCrSKCWe6RH9yjML+2ZXUk3oB5pif0YP1mGbWZ/bOO4Law==",
+      "type": "package",
+      "path": "autorest/0.17.3",
+      "files": [
+        "autorest.0.17.3.nupkg.sha512",
+        "autorest.nuspec",
+        "tools/AutoRest.AzureResourceSchema.dll",
+        "tools/AutoRest.CSharp.Azure.Fluent.dll",
+        "tools/AutoRest.CSharp.Azure.dll",
+        "tools/AutoRest.CSharp.dll",
+        "tools/AutoRest.CompositeSwagger.dll",
+        "tools/AutoRest.Core.dll",
+        "tools/AutoRest.Extensions.Azure.dll",
+        "tools/AutoRest.Extensions.dll",
+        "tools/AutoRest.Go.dll",
+        "tools/AutoRest.Java.Azure.Fluent.dll",
+        "tools/AutoRest.Java.Azure.dll",
+        "tools/AutoRest.Java.dll",
+        "tools/AutoRest.NodeJS.Azure.dll",
+        "tools/AutoRest.NodeJS.dll",
+        "tools/AutoRest.Python.Azure.dll",
+        "tools/AutoRest.Python.dll",
+        "tools/AutoRest.Ruby.Azure.dll",
+        "tools/AutoRest.Ruby.dll",
+        "tools/AutoRest.Swagger.dll",
+        "tools/AutoRest.exe",
+        "tools/AutoRest.json",
+        "tools/Newtonsoft.Json.dll",
+        "tools/YamlDotNet.dll"
+      ]
+    },
     "Dapper/1.50.2": {
       "sha512": "31Ju5VGyNNc66OAsw+SCp1TWPBuyw8ZBdkMG5pSUPChZcy27s2GhVz5B9INP4f25mPqfiJ+mfeHy9JAJyyT+LQ==",
       "type": "package",
@@ -4527,6 +4653,37 @@
         "lib/net451/Dapper.xml",
         "lib/netstandard1.3/Dapper.dll",
         "lib/netstandard1.3/Dapper.xml"
+      ]
+    },
+    "Elmah.Io.AspNetCore/3.2.39-pre": {
+      "sha512": "6YUq3mRVpphxmilSI2tyolA725RGQuU20YSqadGWiojA6IWenUR08ui34EQta7mFc//S9RkRvvAywqvNDl77TQ==",
+      "type": "package",
+      "path": "elmah.io.aspnetcore/3.2.39-pre",
+      "files": [
+        "elmah.io.aspnetcore.3.2.39-pre.nupkg.sha512",
+        "elmah.io.aspnetcore.nuspec",
+        "lib/netstandard1.1/Elmah.Io.AspNetCore.dll"
+      ]
+    },
+    "Elmah.Io.Client/3.0.41-pre": {
+      "sha512": "VLlRFsXhm8Vbgvxt051DiKg0HTtGFZobXalO00qgYibv2fNohOO3S7cbDCQ8DZ+zqwZEw+SeU9oy05D9XD0xHw==",
+      "type": "package",
+      "path": "elmah.io.client/3.0.41-pre",
+      "files": [
+        "elmah.io.client.3.0.41-pre.nupkg.sha512",
+        "elmah.io.client.nuspec",
+        "lib/net45/Elmah.Io.Client.dll",
+        "lib/netstandard1.1/Elmah.Io.Client.dll"
+      ]
+    },
+    "Elmah.Io.Extensions.Logging/3.1.22-pre": {
+      "sha512": "NlRrNYDvxCq1kJUv8ZoS7arxQ4dZGK4DeX+wjMmX2yKZ+HRuMH9bg9HaxmL91bNHXz2VmcTWlzy563LiK/IEeQ==",
+      "type": "package",
+      "path": "elmah.io.extensions.logging/3.1.22-pre",
+      "files": [
+        "elmah.io.extensions.logging.3.1.22-pre.nupkg.sha512",
+        "elmah.io.extensions.logging.nuspec",
+        "lib/netstandard1.1/Elmah.Io.Extensions.Logging.dll"
       ]
     },
     "FluentValidation/6.4.1": {
@@ -5893,6 +6050,17 @@
         "microsoft.extensions.logging.debug.nuspec"
       ]
     },
+    "Microsoft.Extensions.Logging.Filter/1.1.1": {
+      "sha512": "ocS5j7zmba1ATwMXSu74esj8NQ5dDbOjOcEY3xq7iln5gcY3njgd9aGY9+2KiTjj88FUjS4spd32ihMp6YrMlg==",
+      "type": "package",
+      "path": "microsoft.extensions.logging.filter/1.1.1",
+      "files": [
+        "lib/netstandard1.1/Microsoft.Extensions.Logging.Filter.dll",
+        "lib/netstandard1.1/Microsoft.Extensions.Logging.Filter.xml",
+        "microsoft.extensions.logging.filter.1.1.1.nupkg.sha512",
+        "microsoft.extensions.logging.filter.nuspec"
+      ]
+    },
     "Microsoft.Extensions.ObjectPool/1.1.0": {
       "sha512": "8tg7DpFubtj98Lf+N+zpu5VXe9EHCPrqcukpsjC9BSfcnC0Oq8CUZKYUsLScS2pnqEkSNHwuHoWRtJ6xhMO/xg==",
       "type": "package",
@@ -6082,6 +6250,18 @@
         "microsoft.netcore.windows.apisets.1.0.1.nupkg.sha512",
         "microsoft.netcore.windows.apisets.nuspec",
         "runtime.json"
+      ]
+    },
+    "Microsoft.Rest.ClientRuntime/2.3.5": {
+      "sha512": "0mB7pp9HfggsP/weEB4/KtKrxXh3RJGp2aTzS+ON/tkLXQiZTeeq6gCPiChMWHZrVtnTfQcj6heonEFCACH+6Q==",
+      "type": "package",
+      "path": "microsoft.rest.clientruntime/2.3.5",
+      "files": [
+        "lib/net45/Microsoft.Rest.ClientRuntime.dll",
+        "lib/netstandard1.1/Microsoft.Rest.ClientRuntime.dll",
+        "lib/netstandard1.5/Microsoft.Rest.ClientRuntime.dll",
+        "microsoft.rest.clientruntime.2.3.5.nupkg.sha512",
+        "microsoft.rest.clientruntime.nuspec"
       ]
     },
     "Microsoft.VisualBasic/10.1.0": {
@@ -6347,10 +6527,10 @@
         "netstandard.library.nuspec"
       ]
     },
-    "Newtonsoft.Json/9.0.1": {
-      "sha512": "U82mHQSKaIk+lpSVCbWYKNavmNH1i5xrExDEquU1i6I5pV6UMOqRnJRSlKO3cMPfcpp0RgDY+8jUXHdQ4IfXvw==",
+    "Newtonsoft.Json/10.0.1-beta1": {
+      "sha512": "ndkuU1nxhuHZjsZQgn7PJUB7GQVBwZEiPu8BNkOuCVqF8V3ayiEvG1Du4i3i70e7dU1uGWrxw/A1nU1KmaMhFw==",
       "type": "package",
-      "path": "newtonsoft.json/9.0.1",
+      "path": "newtonsoft.json/10.0.1-beta1",
       "files": [
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
@@ -6362,11 +6542,11 @@
         "lib/net45/Newtonsoft.Json.xml",
         "lib/netstandard1.0/Newtonsoft.Json.dll",
         "lib/netstandard1.0/Newtonsoft.Json.xml",
-        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.9.0.1.nupkg.sha512",
+        "lib/netstandard1.1/Newtonsoft.Json.dll",
+        "lib/netstandard1.1/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wpa81+wp8/Newtonsoft.Json.xml",
+        "newtonsoft.json.10.0.1-beta1.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "tools/install.ps1"
       ]
@@ -11376,6 +11556,11 @@
       "path": "../Eventos.IO.Infra.CrossCuting.IoC/Eventos.IO.Infra.CrossCuting.IoC.csproj",
       "msbuildProject": "../Eventos.IO.Infra.CrossCuting.IoC/Eventos.IO.Infra.CrossCuting.IoC.csproj"
     },
+    "Eventos.IO.Infra.CrossCutting.AspNetFilters/1.0.0": {
+      "type": "project",
+      "path": "../Eventos.IO.Infra.CrossCutting.AspNetFilters/Eventos.IO.Infra.CrossCutting.AspNetFilters.csproj",
+      "msbuildProject": "../Eventos.IO.Infra.CrossCutting.AspNetFilters/Eventos.IO.Infra.CrossCutting.AspNetFilters.csproj"
+    },
     "Eventos.IO.Infra.CrossCutting.Identity/1.0.0": {
       "type": "project",
       "path": "../Eventos.IO.Infra.CrossCutting.Identity/Eventos.IO.Infra.CrossCutting.Identity.csproj",
@@ -11390,9 +11575,12 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v1.1": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 2.0.1",
+      "Elmah.Io.AspNetCore >= 3.2.39-pre",
+      "Elmah.Io.Extensions.Logging >= 3.1.22-pre",
       "Eventos.IO.Application >= 1.0.0",
       "Eventos.IO.Infra.CrossCuting.Bus >= 1.0.0",
       "Eventos.IO.Infra.CrossCuting.IoC >= 1.0.0",
+      "Eventos.IO.Infra.CrossCutting.AspNetFilters >= 1.0.0",
       "Eventos.IO.Infra.CrossCutting.Identity >= 1.0.0",
       "Eventos.IO.Infra.Data >= 1.0.0",
       "Microsoft.ApplicationInsights.AspNetCore >= 2.0.0",
@@ -11432,6 +11620,9 @@
           "projectReferences": {
             "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Infra.Data\\Eventos.IO.Infra.Data.csproj": {
               "projectPath": "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Infra.Data\\Eventos.IO.Infra.Data.csproj"
+            },
+            "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Infra.CrossCutting.AspNetFilters\\Eventos.IO.Infra.CrossCutting.AspNetFilters.csproj": {
+              "projectPath": "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Infra.CrossCutting.AspNetFilters\\Eventos.IO.Infra.CrossCutting.AspNetFilters.csproj"
             },
             "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Infra.CrossCuting.Bus\\Eventos.IO.Infra.CrossCuting.Bus.csproj": {
               "projectPath": "C:\\projetos\\AspNetCore\\Eventos.IO\\src\\Eventos.IO.Infra.CrossCuting.Bus\\Eventos.IO.Infra.CrossCuting.Bus.csproj"
@@ -11482,6 +11673,10 @@
             "target": "Package",
             "version": "1.1.0"
           },
+          "Elmah.Io.AspNetCore": {
+            "target": "Package",
+            "version": "3.2.39-pre"
+          },
           "Microsoft.EntityFrameworkCore.Design": {
             "suppressParent": "All",
             "target": "Package",
@@ -11512,6 +11707,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "1.1.1"
+          },
+          "Elmah.Io.Extensions.Logging": {
+            "target": "Package",
+            "version": "3.1.22-pre"
           },
           "Microsoft.AspNetCore.Mvc": {
             "target": "Package",
