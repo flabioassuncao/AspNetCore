@@ -60,6 +60,12 @@ namespace Eventos.IO.Infra.Data.Repository
             return Db.Database.GetDbConnection().Query<Evento>(sql, new { oid = organizadorId });
         }
 
+        public IEnumerable<Categoria> ObterCategorias()
+        {
+            var sql = @"SELECT * FROM Categorias";
+            return Db.Database.GetDbConnection().Query<Categoria>(sql);
+        }
+
         public override Evento ObterPorId(Guid id)
         {
             //return Db.Eventos.Include(e => e.Endereco).FirstOrDefault(e => e.Id == Id);
@@ -87,5 +93,7 @@ namespace Eventos.IO.Infra.Data.Repository
             evento.ExcluirEvento();
             Atualizar(evento);
         }
+
+        
     }
 }

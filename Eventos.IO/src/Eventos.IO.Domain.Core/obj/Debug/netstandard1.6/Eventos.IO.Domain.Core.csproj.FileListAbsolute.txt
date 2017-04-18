@@ -1,7 +1,6 @@
 C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Domain.Core\bin\Debug\netstandard1.6\Eventos.IO.Domain.Core.deps.json
 C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Domain.Core\bin\Debug\netstandard1.6\Eventos.IO.Domain.Core.dll
 C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Domain.Core\bin\Debug\netstandard1.6\Eventos.IO.Domain.Core.pdb
-C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Domain.Core\obj\Debug\netstandard1.6\Eventos.IO.Domain.Core.csprojResolveAssemblyReference.cache
 C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Domain.Core\obj\Debug\netstandard1.6\Eventos.IO.Domain.Core.AssemblyInfo.cs
 C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Domain.Core\obj\Debug\netstandard1.6\Eventos.IO.Domain.Core.dll
 C:\projetos\AspNetCore\Eventos.IO\src\Eventos.IO.Domain.Core\obj\Debug\netstandard1.6\Eventos.IO.Domain.Core.pdb
